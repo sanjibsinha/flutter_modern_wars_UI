@@ -5,6 +5,8 @@ import 'package:flutter_modern_wars_UI/controllers/exclusive_weapon_controller.d
 import 'package:flutter_modern_wars_UI/controllers/top_battle_controller.dart';
 import 'package:flutter_modern_wars_UI/views/about_all_wars.dart';
 
+import 'all_wars.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -29,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         });
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AboutAllWars()),
+          MaterialPageRoute(builder: (context) => AllWars()),
         );
       },
       child: Container(
@@ -80,10 +82,14 @@ class _HomePageState extends State<HomePage> {
             Text(
               'Welcome to Modern War History!',
               style: TextStyle(
-                fontFamily: 'Trajan Pro',
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                  fontSize: 45.0,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: 'Trajan Pro',
+                  foreground: Paint()
+                    ..color = Colors.red
+                    ..strokeWidth = 2.0
+                    ..style = PaintingStyle.stroke
+
               ),
             ),
             SizedBox(height: 20.00,),

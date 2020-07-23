@@ -115,7 +115,7 @@ class TopBattleController extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.00),
                             child: Image(
                               height: 160.00,
-                              width: 160.00,
+                              width: 180.00,
                               image: AssetImage(nineteenHundredWar.imageUrl),
                               fit: BoxFit.cover,
                             ),

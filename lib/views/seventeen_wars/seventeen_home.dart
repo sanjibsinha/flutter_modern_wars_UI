@@ -1,44 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_modern_wars_UI/models/seventeen_hundred_wars.dart';
 import 'seventeen_first.dart';
 
-class SeventeenHome extends StatelessWidget {
+class SeventeenHome extends StatefulWidget {
+  @override
+  _SeventeenHomeState createState() => _SeventeenHomeState();
+}
+
+class _SeventeenHomeState extends State<SeventeenHome> {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Back to About All Wars Page'),
-      ),
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.all(32),
-          children: <Widget>[
-            Text(
-              'Seventeen Hundred Home',
-              style: TextStyle(
-                fontFamily: 'Trajan Pro',
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          backgroundColor: Colors.white,
+          stretch: true,
+          expandedHeight: 350.0,
+          flexibleSpace: FlexibleSpaceBar(
+            background: Image(
+              fit: BoxFit.cover,
+              image: AssetImage('images/1.jpg'),
+            ),
+            stretchModes: [
+              StretchMode.zoomBackground,
+            ],
+          ),
+        ),
+        SliverFixedExtentList(
+          itemExtent: 420,
+          delegate: SliverChildListDelegate([
+            Container(
+              color: Colors.white,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                // text direction does the same thing horizontally
+                verticalDirection: VerticalDirection.down,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Major Battles in 1700',
+                      style: TextStyle(
+                          fontSize: 110.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Schuyler',
+                          foreground: Paint()
+                            ..color = Colors.red
+                            ..strokeWidth = 2.0
+                            ..style = PaintingStyle.stroke
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+
+                ],
               ),
             ),
-            SizedBox(height: 20.00,),
-            Column(
-              children: <Widget>[
-
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SeventeenFirst()),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ],
+            Container(color: Colors.red),
+            Container(color: Colors.blue),
+            Container(color: Colors.green),
+          ]),
         ),
-      ),
+
+      ],
     );
   }
 }
+
