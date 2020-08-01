@@ -1,17 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modern_wars_UI/models/seventeen_hundred_wars.dart';
-import 'package:flutter_modern_wars_UI/models/weapon_used.dart';
-import 'package:flutter_modern_wars_UI/views/home_page.dart';
-import 'package:flutter_modern_wars_UI/views/seventeen_wars/seventeen_second.dart';
-import 'seventeen_home.dart';
 
-class SeventeenFirst extends StatefulWidget {
+class SeventeenSecond extends StatefulWidget {
   @override
-  _SeventeenFirstState createState() => _SeventeenFirstState();
+  _SeventeenSecondState createState() => _SeventeenSecondState();
 }
 
-class _SeventeenFirstState extends State<SeventeenFirst> {
+class _SeventeenSecondState extends State<SeventeenSecond> {
   int _currentTab = 0;
 
   List<SeventeenHundredWars> seventeenWars = [
@@ -34,7 +29,7 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
             flexibleSpace: FlexibleSpaceBar(
               background: Image(
                 fit: BoxFit.cover,
-                image: AssetImage('images/11.jpg'),
+                image: AssetImage(seventeenWars[1].imageUrl),
               ),
               stretchModes: [
                 StretchMode.zoomBackground,
@@ -56,7 +51,7 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        seventeenWars[0].name,
+                        seventeenWars[1].name,
                         style: TextStyle(
                             fontSize: 70.0,
                             fontWeight: FontWeight.bold,
@@ -71,12 +66,12 @@ class _SeventeenFirstState extends State<SeventeenFirst> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 2.0, right: 5.0, bottom: 10.0),
                       child: Text(
-                        '${seventeenWars[0].description}',
+                        '${seventeenWars[1].description}',
                         style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                          wordSpacing: 2.5,
-                          letterSpacing: 1.2
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                            wordSpacing: 2.5,
+                            letterSpacing: 1.2
                         ),
                         textAlign: TextAlign.left,
                       ),

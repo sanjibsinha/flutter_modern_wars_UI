@@ -8,7 +8,7 @@ class EachPage {
 
 List<EachPage> allPages = [
   EachPage(
-    imageUrl: 'images/10.jpg',
+    imageUrl: 'images/11.jpg',
     name: '1700 Home Page',
   ),
   EachPage(

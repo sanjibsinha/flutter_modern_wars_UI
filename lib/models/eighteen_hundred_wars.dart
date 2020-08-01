@@ -72,7 +72,7 @@ List<EighteenHundredWars> eighteenHundredWars = [
     summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   ),
   EighteenHundredWars(
-    imageUrl: 'images/10.jpg',
+    imageUrl: 'images/11.jpg',
     centuries: 1700,
     name: 'Name',
     place: 'China',
